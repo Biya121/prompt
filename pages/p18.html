@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무한 생성 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">무한 생성 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">무한 생성 패턴</div>
+    <div class="page-intro">변수만 바꾸면 같은 구조의 결과물을 무한히 만들어 낼 수 있는 패턴입니다. 매번 새로 프롬프트를 작성하는 대신, 틀(템플릿)을 한 번 설계해 두고 변수만 교체하는 방식입니다. 이메일, 보고서, 제안서처럼 반복 생성이 많은 업무에서 큰 효율을 발휘합니다.</div>
+
+    <div class="section">
+      <div class="section-title">핵심 구조</div>
+      <div class="callout gray">
+        <div class="callout-icon">🔑</div>
+        <div><strong>템플릿 제목</strong> → <strong>변수 정의</strong> → <strong>생성 규칙</strong> → 변수 값만 바꿔 무한 생성</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">예시 · 무역 이메일 생성기</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">수신자, 목적, 톤 3가지 변수를 조합해 상황에 맞는 무역 이메일을 즉시 생성합니다. 템플릿을 한 번 설정해 두면 변수만 바꿔 다양한 상황의 이메일을 빠르게 만들 수 있습니다.</div>
+          <div class="code-wrap">
+            <pre">무역 이메일 생성기
+"[수신자 유형]에게 [목적]을 전달하는 영문 이메일"
+
+변수 :
+{수신자} : 신규 바이어 / 기존 거래처 / 포워더 / 관세사
+{목적}   : 첫 연락 / 견적 요청 / 납기 연장 / 클레임 대응
+{톤}     : 공식 / 친근 / 긴급
+
+생성 규칙 :
+- 3단락 구조
+- 제목 포함
+- 150단어 이내
+
+요청 예시 :
+수신자 = 신규 바이어
+목적   = 첫 연락
+톤     = 공식</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">변수 조합 예시</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>수신자</th><th>목적</th><th>톤</th><th>결과물 성격</th></tr></thead>
+          <tbody>
+            <tr><td>신규 바이어</td><td>첫 연락</td><td>공식</td><td>정중한 소개 이메일</td></tr>
+            <tr><td>기존 거래처</td><td>납기 연장</td><td>친근</td><td>양해 구하는 부드러운 이메일</td></tr>
+            <tr><td>포워더</td><td>견적 요청</td><td>긴급</td><td>빠른 답변을 촉구하는 이메일</td></tr>
+            <tr><td>관세사</td><td>클레임 대응</td><td>공식</td><td>법적 표현이 포함된 공식 서한</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">응용 · 나만의 생성기 만들기</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">같은 구조로 자신의 업무에 맞는 생성기를 직접 설계할 수 있습니다. 변수의 종류와 생성 규칙을 바꾸면 어떤 반복 업무에도 적용됩니다.</div>
+          <div class="code-wrap">
+            <pre">[생성기 이름] : {결과물 이름} 생성기
+
+변수 :
+{변수1} : 선택지A / 선택지B / 선택지C
+{변수2} : 선택지A / 선택지B / 선택지C
+{변수3} : 선택지A / 선택지B
+
+생성 규칙 :
+- {형식 조건}
+- {길이 조건}
+- {포함해야 할 요소}
+
+요청 :
+변수1 = ?
+변수2 = ?
+변수3 = ?</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-icon">💡</div>
+      <div><strong>설계 팁</strong><br>변수는 3~4개가 적당합니다. 너무 많으면 조합이 복잡해져 결과물의 일관성이 떨어질 수 있습니다. 가장 자주 바뀌는 요소만 변수로 만들고, 나머지는 생성 규칙으로 고정하세요.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p18.html');</script>
+</body>
+</html>

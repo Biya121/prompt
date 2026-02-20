@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>게임 플레이 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">게임 플레이 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">게임 플레이 패턴</div>
+    <div class="page-intro">AI를 텍스트 기반 게임 엔진으로 활용하는 패턴입니다. 목표·플레이어·규칙·엔딩을 입력으로 정의하면, AI가 내러레이터가 되어 장면을 하나씩 진행합니다. 어린이용 스토리텔링부터 본격 RPG까지 폭넓게 응용할 수 있습니다.</div>
+
+    <div class="section">
+      <div class="section-title">핵심 구성 요소</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>요소</th><th>역할</th><th>예시</th></tr></thead>
+          <tbody>
+            <tr><td><strong>게임 목적</strong></td><td>플레이어가 달성해야 할 최종 목표</td><td>침략자를 막고 세계를 구한다</td></tr>
+            <tr><td><strong>플레이어 행동</strong></td><td>게임 안에서 할 수 있는 것들</td><td>탐험, 대화, 전투, 아이템 수집</td></tr>
+            <tr><td><strong>플레이어 특징</strong></td><td>캐릭터의 성격·직업·능력</td><td>용감한 팔라딘, 지혜로운 위저드 등</td></tr>
+            <tr><td><strong>도전과 장애물</strong></td><td>게임 중 마주칠 위기 요소</td><td>함정, 강적, 수수께끼</td></tr>
+            <tr><td><strong>게임 규칙</strong></td><td>진행 방식과 조건</td><td>한 장면씩 진행, 선택지 제공</td></tr>
+            <tr><td><strong>엔딩 조건</strong></td><td>게임이 끝나는 상황</td><td>최종 보스 격파, 행복한 결말</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">유형 1 · 어드벤처 RPG 게임</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">배경, 목표, 직업 선택, 전투 조건을 명확히 정의하면 AI가 내러레이터 역할로 몰입감 있는 텍스트 RPG를 진행합니다. 플레이어의 선택이 이야기 흐름에 영향을 줍니다.</div>
+          <div class="code-wrap">
+            <pre>#입력
+[게임 목적] Mind Flayer의 침략 계획을 밝혀내고 저지해 지구를 구한다.
+
+[플레이어가 할 수 있는 것]
+- 도시와 외계인 기지를 탐험한다.
+- NPC와 대화하며 정보를 수집한다.
+- 퍼즐을 논리적으로 해결한다.
+- 적과 전투를 벌인다.
+- 유용한 아이템을 수집한다.
+
+[캐릭터 직업] 팔라딘 / 위저드 / 몽크 / 파이터 / 드루이드 중 선택
+
+[도전과 장애물]
+- 도시 곳곳의 Mind Flayer와 조우
+- 외계인 기지의 위험한 함정
+- 외계인 지도자(The Emperor)와의 최종 결전
+
+[게임 규칙]
+- 적에게 공격받으면 전투가 시작된다.
+- 수집한 아이템으로 장애물을 극복한다.
+- NPC와 대화 시 선택지가 제공된다.
+- 플레이어의 선택이 이야기 흐름에 영향을 준다.
+- 상태창으로 현재 게임 진행 상태를 표시한다.
+- 반드시 한 장면씩 진행한다.
+
+[엔딩] 외계인 본거지에서 최후의 전투를 치르고 승리한다.
+
+#처리
+당신은 "텍스트 기반 어드벤처 게임"입니다.
+Baldur's Gate 3의 내러레이터 말투로 게임을 진행하세요.
+위 입력 내용을 전체 게임 구조에 반영하고,
+지금 바로 게임을 시작하세요.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">유형 2 · 어린이용 스토리텔링 게임</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">대상 연령과 주인공, 이야기 줄거리를 지정하면 AI가 안전하고 따뜻한 스토리 게임을 만들어 줍니다. 폭력 없이 선택지만으로 진행하며, 반드시 행복한 결말을 갖도록 조건을 명시합니다.</div>
+          <div class="code-wrap">
+            <pre>#입력
+[주인공] 서아
+[나이와 성별] 4살 여아
+[스토리] 반려견 밀크와 산책하던 서아가
+         아기 유니콘을 만나 유니콘 나라를 여행하고
+         집으로 돌아옵니다.
+
+#처리
+당신은 "스토리텔링 게임"입니다.
+아래 조건을 반드시 지키세요.
+- 어떠한 폭력성도 없을 것
+- 반드시 행복한 결말로 끝날 것
+- 전체 게임은 5분 이내에 완료될 것
+- 각 장면에는 선택지를 제공하고
+  플레이어가 선택할 때까지 대기할 것
+- 반드시 한 장면씩 진행할 것
+설계 내용 설명 없이 지금 바로 게임을 시작하세요.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">게임 플레이 패턴 설계 체크리스트</div>
+      <div class="checklist">
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>게임의 최종 목표가 한 문장으로 명확한가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>플레이어가 할 수 있는 행동의 범위를 정의했는가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>대상 연령에 맞는 난이도와 내용인가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>"한 장면씩 진행" 규칙이 명시되어 있는가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>엔딩 조건이 구체적으로 정의되어 있는가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>AI의 역할(내러레이터, 게임 진행자)이 명확한가?</span></div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-icon">💡</div>
+      <div><strong>활용 팁</strong><br>게임의 세계관이 구체적일수록 AI의 묘사가 풍부해집니다. 아이템 이름, 장소 이름, 등장인물의 특성을 미리 정의해 두면 훨씬 일관된 게임 경험을 만들 수 있습니다.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p11.html');</script>
+</body>
+</html>

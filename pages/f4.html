@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROSES 프레임워크 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">ROSES 프레임워크</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag framework">프레임워크</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">ROSES 프레임워크</div>
+    <div class="page-intro">Role(역할) · Objective(목표) · Scenario(시나리오) · Expected Solution(기대 결과) · Steps(단계)의 5가지 요소로 구성됩니다. 가격 협상, 계약 조건 조율, 클레임 대응처럼 상황이 복잡하고 단계적 전략이 필요한 작업에 최적화된 프레임워크입니다.</div>
+
+    <div class="section">
+      <div class="section-title">5가지 구성 요소</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>요소</th><th>의미</th><th>입력 내용</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Role</strong></td><td>AI의 전문가 역할</td><td>국제 무역 협상 전문가</td></tr>
+            <tr><td><strong>Objective</strong></td><td>달성해야 할 구체적 목표</td><td>FOB $50/unit 달성</td></tr>
+            <tr><td><strong>Scenario</strong></td><td>현재 협상/상황의 구체적 조건</td><td>바이어 제시가, 시장가, 경쟁사 가격 등</td></tr>
+            <tr><td><strong>Expected Solution</strong></td><td>원하는 결과물의 구성</td><td>협상 전략 3단계, 시나리오별 대응</td></tr>
+            <tr><td><strong>Steps</strong></td><td>진행할 구체적 단계들</td><td>상황 분석 → 가치 제안 → 협상 → 계약</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">실전 예시 · 미국 바이어 가격 협상 전략</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">시나리오(Scenario)에 숫자를 최대한 구체적으로 채울수록 AI가 현실적인 협상 전략을 제시합니다. Steps를 미리 정의하면 원하는 방향으로 협상 흐름을 설계할 수 있습니다.</div>
+          <div class="code-wrap">
+            <pre">Role     : 당신은 국제 무역 협상 전문가입니다.
+
+Objective : 미국 바이어와의 가격 협상에서
+            FOB $50/unit 달성이 목표입니다.
+
+Scenario :
+- 바이어 첫 제시가 : $40/unit
+- 우리 희망가 : $50/unit
+- 시장 평균가 : $45/unit
+- 바이어 연간 예상 물량 : 50,000 units
+- 경쟁사(중국 업체) 제시가 : $42/unit
+
+Expected Solution :
+- 협상 전략 3단계
+- 각 단계별 제시 가격 및 조건
+- 양보 vs 가치 강조 밸런스
+- 최종 합의 시나리오
+
+Steps :
+1. 현재 상황 분석
+2. 가치 제안 준비 (품질, 납기, 인증)
+3. 1차 협상 : 품질 차별화 강조, $55 제시
+4. 2차 협상 : 물량 증가 시 단계별 할인 제안
+   ($55 → $53 → $50)
+5. 계약서 작성 및 후속 조치
+
+출력 :
+[협상 스크립트] = 각 단계별 대화 예시
+[체크리스트]   = 협상 전 준비 항목 목록</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">ROSES의 핵심 — Scenario의 힘</div>
+      <div class="callout green">
+        <div class="callout-icon">✅</div>
+        <div><strong>숫자가 많을수록 전략이 정밀해집니다</strong><br>상대방 제시가, 시장가, 경쟁사 가격, 예상 물량처럼 실제 숫자를 Scenario에 넣으면 AI가 수치를 기반으로 한 단계별 협상 레버리지를 계산합니다. 막연한 "가격이 낮다"보다 "$42 vs $50"이 훨씬 강력한 입력입니다.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">다양한 적용 분야</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>상황</th><th>Objective 예시</th><th>Scenario 핵심 데이터</th></tr></thead>
+          <tbody>
+            <tr><td>가격 협상</td><td>목표 단가 달성</td><td>현재가, 시장가, 경쟁사가, 물량</td></tr>
+            <tr><td>납기 협상</td><td>납기 연장 승인</td><td>현재 납기, 요청 기간, 패널티 조건</td></tr>
+            <tr><td>클레임 대응</td><td>보상 최소화 & 관계 유지</td><td>클레임 금액, 귀책 비율, 거래 이력</td></tr>
+            <tr><td>계약 조건 조율</td><td>유리한 결제 조건 확보</td><td>현재 조건, 원하는 조건, 대안 인센티브</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/f4.html');</script>
+</body>
+</html>

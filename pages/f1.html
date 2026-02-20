@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5W1H 프레임워크 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">5W1H 프레임워크</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag framework">프레임워크</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">5W1H 프레임워크</div>
+    <div class="page-intro">육하원칙(Who·What·When·Where·Why·How)을 프롬프트 입력 구조로 활용하는 프레임워크입니다. 상황을 6가지 축으로 명확하게 정의하면, AI가 맥락을 완전히 이해한 상태에서 구체적이고 실행 가능한 전략을 제시합니다.</div>
+
+    <div class="section">
+      <div class="section-title">6가지 축의 역할</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>축</th><th>질문</th><th>입력 예시</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Who</strong></td><td>누가 하는가? (주체 특성)</td><td>중소 제조업체, 직원 30명</td></tr>
+            <tr><td><strong>What</strong></td><td>무엇을 하는가? (대상과 행동)</td><td>친환경 포장재를 유럽에 수출</td></tr>
+            <tr><td><strong>When</strong></td><td>언제인가? (시점과 기간)</td><td>2026년 하반기부터 본격 시작</td></tr>
+            <tr><td><strong>Where</strong></td><td>어디서/어디로? (장소와 시장)</td><td>독일·프랑스·네덜란드 1차 타겟</td></tr>
+            <tr><td><strong>Why</strong></td><td>왜 하는가? (배경과 목적)</td><td>EU 플라스틱 규제 강화로 수요 급증</td></tr>
+            <tr><td><strong>How</strong></td><td>어떻게 할 것인가? (방법과 채널)</td><td>유통사 파트너십을 통한 B2B 판매</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">실전 예시 · EU 시장 진출 전략</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">6가지 축으로 상황을 정의한 뒤, 전문가 역할과 원하는 출력 항목을 함께 지정합니다. 맥락이 충분하기 때문에 AI가 일반론이 아닌 이 회사의 상황에 맞는 구체적인 전략을 제시합니다.</div>
+          <div class="code-wrap">
+            <pre>#입력 (5W1H)
+[Who]   중소 제조업체, 직원 30명
+[What]  친환경 포장재를 유럽 시장에 수출
+[When]  2026년 하반기부터 본격 수출 시작
+[Where] 독일, 프랑스, 네덜란드를 1차 타겟으로
+[Why]   EU 플라스틱 규제 강화로 친환경 포장재 수요 급증
+[How]   현재 유통사 파트너십을 통한 B2B 판매
+
+#처리
+당신은 "EU 시장 진출 전문 컨설턴트"입니다.
+5W1H 정보를 바탕으로 다음을 작성하세요.
+
+1. 시장 진입 전략 (3가지 옵션 비교)
+2. 필수 인증 및 규제 대응 (CE마크 등)
+3. 바이어 발굴 및 파트너십 전략
+4. 6개월 실행 로드맵
+
+#출력
+[전략 보고서] = 각 섹션별 300~500단어</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5W1H 활용 팁</div>
+      <div class="priority-list">
+        <div class="priority-row blue"><span class="priority-dot">💡</span><div><span class="priority-label">Why를 충분히 쓰세요</span> 배경과 목적이 구체적일수록 AI의 전략 제안이 현실적이고 실행 가능해집니다.</div></div>
+        <div class="priority-row yellow"><span class="priority-dot">📌</span><div><span class="priority-label">How는 현재 상황 기준으로</span> 이상적인 방식이 아닌 지금 실제로 사용 중인 방법을 적으면, AI가 현실적인 대안을 제시합니다.</div></div>
+        <div class="priority-row red"><span class="priority-dot">⚠️</span><div><span class="priority-label">모든 축을 채울 필요는 없습니다</span> 정보가 없는 축은 "미정" 또는 생략해도 됩니다. 단, Who와 What은 반드시 포함하세요.</div></div>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-icon">✅</div>
+      <div><strong>언제 쓰면 좋은가?</strong><br>새로운 프로젝트나 전략을 시작할 때, 상황을 처음으로 AI에게 설명해야 할 때, 또는 여러 옵션을 비교한 종합 보고서가 필요할 때 특히 효과적입니다.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/f1.html');</script>
+</body>
+</html>

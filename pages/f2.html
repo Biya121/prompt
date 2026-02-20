@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CO-STAR 프레임워크 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">CO-STAR 프레임워크</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag framework">프레임워크</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">CO-STAR 프레임워크</div>
+    <div class="page-intro">Context(맥락) · Objective(목표) · Style(문체) · Tone(톤) · Audience(대상) · Response(출력 형식)의 6가지 요소로 프롬프트를 구성하는 프레임워크입니다. 설득력 있는 제안서, 맞춤형 보고서, 바이어 커뮤니케이션처럼 완성도 높은 비즈니스 문서를 만들 때 특히 유용합니다.</div>
+
+    <div class="section">
+      <div class="section-title">6가지 구성 요소</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>요소</th><th>의미</th><th>입력 내용</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Context</strong></td><td>배경과 현재 상황</td><td>시장 상황, 고객 상태, 경쟁 환경</td></tr>
+            <tr><td><strong>Objective</strong></td><td>이 문서로 달성할 목표</td><td>계약 체결, 미팅 수락, 인식 전환</td></tr>
+            <tr><td><strong>Style</strong></td><td>문서의 스타일과 형식</td><td>전문 보고서, 이메일, 제안서</td></tr>
+            <tr><td><strong>Tone</strong></td><td>전달하고 싶은 감정과 태도</td><td>자신감, 협력적, 긴급, 친근</td></tr>
+            <tr><td><strong>Audience</strong></td><td>이 문서를 읽을 사람</td><td>소싱 디렉터, CEO, 현장 담당자</td></tr>
+            <tr><td><strong>Response</strong></td><td>원하는 출력의 형식과 조건</td><td>영문, 800단어, 데이터 포함</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">실전 예시 · K-뷰티 바이어 설득 제안서</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">6가지 요소를 모두 채우면 AI가 단순한 글 생성이 아닌, 이 특정 독자를 설득하기 위한 전략적 문서를 작성합니다. 독자(Audience)와 목표(Objective)가 구체적일수록 설득력이 높아집니다.</div>
+          <div class="code-wrap">
+            <pre>Context  : 미국 대형 유통사가 K-뷰티 제품 소싱을 고려 중입니다.
+           현재 중국 공급사와 거래 중이나 품질 이슈로 대안을 찾고 있습니다.
+
+Objective : 우리 회사를 신규 공급사로 선정하도록 설득하는
+            제안서를 작성하세요.
+
+Style     : 전문적이고 데이터 기반의 비즈니스 문서
+
+Tone      : 자신감 있으면서도 파트너십을 강조하는 협력적 톤
+
+Audience  : 미국 유통사의 소싱 디렉터
+
+Response  :
+- 영문 Business Proposal 형식
+- 총 800~1000단어
+- 품질 비교 데이터 및 인증서 리스트 포함</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">요소별 작성 팁</div>
+      <div class="priority-list">
+        <div class="priority-row blue"><span class="priority-dot">📌</span><div><span class="priority-label">Context는 경쟁 환경까지</span> 상대방의 현재 상황(기존 공급사 문제, 시장 변화)을 포함하면 AI가 더 날카로운 포지셔닝을 제안합니다.</div></div>
+        <div class="priority-row yellow"><span class="priority-dot">🎯</span><div><span class="priority-label">Objective는 동사로</span> "설득한다", "수락하게 한다", "인식을 바꾼다"처럼 행동 지향 동사로 목표를 명시하세요.</div></div>
+        <div class="priority-row red"><span class="priority-dot">👤</span><div><span class="priority-label">Audience가 핵심</span> 독자의 직책, 관심사, 의사결정 권한을 구체적으로 쓸수록 문서의 설득력이 올라갑니다.</div></div>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-icon">✅</div>
+      <div><strong>CO-STAR vs 일반 프롬프트</strong><br>일반 : "K-뷰티 제안서 써줘." → 범용적이고 평범한 제안서<br>CO-STAR : 6가지 요소 정의 → 이 상황, 이 독자, 이 목표에 맞는 전략적 문서</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/f2.html');</script>
+</body>
+</html>

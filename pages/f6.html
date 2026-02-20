@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAB 프레임워크 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">BAB 프레임워크</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag framework">프레임워크</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">BAB 프레임워크</div>
+    <div class="page-intro">Before(이전) · After(이후) · Bridge(연결)의 3단계 구조로 설득력 있는 스토리를 만드는 프레임워크입니다. 문제 상황에서 해결된 상황으로의 변화를 보여주고, 그 변화를 가능하게 한 것이 바로 우리 제품/서비스임을 자연스럽게 전달합니다. 성공 사례, 수출 스토리, 바이어 설득 자료에 특히 효과적입니다.</div>
+
+    <div class="section">
+      <div class="section-title">3단계 구조</div>
+      <div class="priority-list">
+        <div class="priority-row red"><span class="priority-dot">①</span><div><span class="priority-label">[Before] 이전</span> 문제 상황을 생생하게 묘사합니다. 독자가 공감할 수 있는 고통과 어려움을 구체적으로 표현해야 합니다.</div></div>
+        <div class="priority-row blue"><span class="priority-dot">②</span><div><span class="priority-label">[After] 이후</span> 문제가 해결된 이상적인 상태를 그립니다. 구체적인 숫자와 결과로 변화를 명확히 보여줍니다.</div></div>
+        <div class="priority-row yellow"><span class="priority-dot">③</span><div><span class="priority-label">[Bridge] 연결</span> Before에서 After로 넘어간 방법을 설명합니다. 여기서 우리의 제품·서비스·솔루션이 등장합니다.</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">실전 예시 · 수출 성공 스토리</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">Before의 고통이 구체적일수록 After의 변화가 극적으로 느껴집니다. Bridge에서 우리의 역할을 자연스럽게 연결하면 광고처럼 느껴지지 않으면서도 강한 설득력을 가집니다.</div>
+          <div class="code-wrap">
+            <pre">아래 BAB 구조로 수출 성공 스토리를 작성하세요.
+
+[Before] : 수출 경험이 전혀 없는 중소 제조업체.
+           바이어 발굴 방법도, FTA 혜택도 몰랐고,
+           서류 작업에만 하루 종일이 걸렸다.
+
+[After]  : 6개월 후, 미국·유럽 동시 수출 성공.
+           FTA 활용으로 관세 30% 절감.
+           서류 자동화로 담당자 업무 시간 70% 단축.
+
+[Bridge] : 이 변화를 만든 것은 단 세 가지였다.
+           올바른 정보, 체계적인 프로세스,
+           그리고 함께한 전문가 파트너십.
+
+형식 : 바이어에게 보낼 제안서 내 성공 사례 섹션
+톤   : 감동적이고 신뢰감 있게
+길이 : 300단어 이내</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">BAB 활용 분야</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>활용 분야</th><th>Before 예시</th><th>After 예시</th></tr></thead>
+          <tbody>
+            <tr><td><strong>바이어 제안서</strong></td><td>중국 공급사 품질 문제로 손실 발생</td><td>불량률 0%, 납기 준수율 100%</td></tr>
+            <tr><td><strong>마케팅 콘텐츠</strong></td><td>수작업 서류로 하루 3시간 낭비</td><td>자동화로 15분 만에 완료</td></tr>
+            <tr><td><strong>투자자 발표</strong></td><td>국내 시장만으로 성장 한계 봉착</td><td>3개국 수출, 매출 2배 달성</td></tr>
+            <tr><td><strong>고객 후기 구성</strong></td><td>FTA 혜택 몰라 경쟁사에 가격 패배</td><td>협정세율 적용 후 수주 3건 연속 성공</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">효과적인 BAB 작성 팁</div>
+      <div class="priority-list">
+        <div class="priority-row red"><span class="priority-dot">🔴</span><div><span class="priority-label">Before는 감정적으로</span> 숫자보다 감정(답답함, 불안, 좌절)을 먼저 표현하세요. 독자가 "맞아, 나도 그랬어"라고 느껴야 합니다.</div></div>
+        <div class="priority-row blue"><span class="priority-dot">🔵</span><div><span class="priority-label">After는 수치로</span> 모호한 "더 나아졌다"보다 "관세 30% 절감", "납기 단축 2주"처럼 구체적 숫자가 신뢰를 만듭니다.</div></div>
+        <div class="priority-row yellow"><span class="priority-dot">🟡</span><div><span class="priority-label">Bridge는 간결하게</span> 전환의 핵심만 짧게 담으세요. 너무 길면 광고처럼 느껴져 설득력이 떨어집니다.</div></div>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-icon">✅</div>
+      <div><strong>BAB의 강점</strong><br>독자가 Before 상황에 공감하는 순간, After를 향한 욕구가 생깁니다. Bridge는 그 욕구를 행동으로 연결하는 다리 역할을 합니다. 논리적 설득이 아닌 감정적 공감에서 출발하기 때문에, 처음 만나는 바이어나 낯선 시장 진입 시 특히 효과적입니다.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/f6.html');</script>
+</body>
+</html>

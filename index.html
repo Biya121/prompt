@@ -4,132 +4,168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>프롬프트 완전 가이드</title>
-<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
 <style>
-/* ─── HOME ONLY ─── */
+/* ── 홈 전용 ── */
 .home-page {
-  padding: 64px 48px 80px;
-  width: 100%;
-  animation: fadeUp 0.22s ease both;
+  padding: 64px 52px 88px;
+  animation: fadeUp 0.2s ease both;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.home-eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--ink-4); margin-bottom: 14px;
 }
 
 .home-title {
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  line-height: 1.2;
-  color: var(--text-primary);
-  margin-bottom: 12px;
+  font-size: 32px; font-weight: 600;
+  letter-spacing: -0.8px; line-height: 1.2;
+  color: var(--ink-1); margin-bottom: 14px;
 }
 
 .home-subtitle {
-  font-size: 16px;
-  color: var(--text-secondary);
-  margin-bottom: 48px;
-  line-height: 1.6;
+  font-size: 15px; font-weight: 300;
+  color: var(--ink-2); margin-bottom: 56px;
+  line-height: 1.7; max-width: 560px;
 }
 
+/* 섹션 구분선 */
+.home-section { margin-bottom: 52px; }
+.home-section-header {
+  display: flex; align-items: baseline; gap: 14px;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.home-section-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  color: var(--ink-1);
+}
+.home-section-count {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--ink-4);
+}
+
+/* 카드 그리드 */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
 }
-
-.home-section-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.home-section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-.home-section + .home-section { margin-top: 36px; }
 
 .home-card {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 18px 20px;
   cursor: pointer;
-  transition: all var(--transition);
-  background: var(--bg);
-  position: relative;
-  overflow: hidden;
+  transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+  background: var(--surface);
   text-decoration: none;
   display: block;
+  position: relative;
+}
+.home-card:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-mid);
+  transform: translateY(-1px);
 }
 
-.home-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  opacity: 0;
-  transition: opacity var(--transition);
+/* 카드 상단 — 번호 + 배지 */
+.hc-meta {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
-
-.home-card.basic::before { background: linear-gradient(90deg, var(--accent), var(--accent-mid)); }
-.home-card.pattern::before { background: linear-gradient(90deg, var(--orange), #e8843a); }
-
-.home-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: transparent; }
-.home-card:hover::before { opacity: 1; }
-
-.hc-icon { font-size: 24px; margin-bottom: 12px; }
-
-.hc-tag {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: 3px;
-  margin-bottom: 8px;
+.hc-num {
+  font-family: var(--font-mono);
+  font-size: 10.5px; color: var(--ink-4);
 }
+.hc-badge {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.4px; text-transform: uppercase;
+  padding: 2px 7px; border-radius: 3px;
+}
+.hc-badge.basic     { background: var(--c-basic-dim);   color: var(--c-basic); }
+.hc-badge.pattern   { background: var(--c-pattern-dim); color: var(--c-pattern); }
+.hc-badge.framework { background: var(--c-fw-dim);      color: var(--c-fw); }
 
-.hc-tag.basic { background: var(--accent-dim); color: var(--accent); }
-.hc-tag.pattern { background: var(--orange-dim); color: var(--orange); }
+/* 카드 본문 */
+.hc-icon-wrap {
+  width: 32px; height: 32px;
+  border-radius: 7px;
+  background: var(--bg-soft);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+  color: var(--ink-3);
+  transition: background var(--transition), color var(--transition);
+}
+.home-card:hover .hc-icon-wrap { background: var(--bg-active); color: var(--ink-1); }
 
 .hc-title {
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-  letter-spacing: -0.2px;
+  font-size: 13px; font-weight: 600;
+  color: var(--ink-1); margin-bottom: 5px;
+  letter-spacing: -0.1px; line-height: 1.4;
 }
-
 .hc-desc {
-  font-size: 12.5px;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 12px; font-weight: 300;
+  color: var(--ink-3); line-height: 1.6;
 }
 
-@media (max-width: 1200px) { .home-page { padding-left: 36px; padding-right: 36px; } }
+/* 카테고리별 왼쪽 보더 포인트 */
+.home-card.basic::after,
+.home-card.pattern::after,
+.home-card.framework::after {
+  content: '';
+  position: absolute; left: 0; top: 20%; bottom: 20%;
+  width: 2px; border-radius: 0 2px 2px 0;
+  opacity: 0; transition: opacity var(--transition);
+}
+.home-card.basic::after    { background: var(--c-basic); }
+.home-card.pattern::after  { background: var(--c-pattern); }
+.home-card.framework::after { background: var(--c-fw); }
+.home-card:hover::after { opacity: 1; }
+
+/* 통계 바 */
+.home-stats {
+  display: flex; gap: 0;
+  margin-bottom: 52px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  overflow: hidden;
+}
+.stat-item {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 20px 28px;
+}
+.stat-item + .stat-item {
+  border-left: 1px solid var(--border);
+}
+.stat-num {
+  font-family: var(--font-mono);
+  font-size: 22px; font-weight: 500;
+  color: var(--ink-1); letter-spacing: -0.5px;
+}
+.stat-label { font-size: 11.5px; color: var(--ink-3); font-weight: 300; }
+.stat-divider { display: none; }
+
+@media (max-width: 1200px) { .home-page { padding-left: 40px; padding-right: 40px; } }
 @media (max-width: 960px)  { .home-page { padding-left: 28px; padding-right: 28px; } }
-@media (max-width: 768px)  { .home-page { padding: 32px 20px 60px; } .home-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px)  {
+  .home-page { padding: 36px 20px 64px; }
+  .home-grid { grid-template-columns: 1fr 1fr; }
+  .home-stats { flex-wrap: wrap; }
+  .stat-item { min-width: 40%; }
+}
+@media (max-width: 480px)  { .home-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-
 <aside class="sidebar" id="sidebar"></aside>
-
 <main class="content-area">
   <div class="content-header">
     <div class="breadcrumb">
@@ -141,77 +177,191 @@
   </div>
 
   <div class="home-page">
+    <div class="home-eyebrow">Prompt Engineering Guide</div>
     <div class="home-title">프롬프트 완전 가이드</div>
-    <div class="home-subtitle">AI에게 더 정확하고 일관된 결과를 이끌어내는<br>10가지 핵심 프롬프트 기법을 학습합니다.</div>
+    <div class="home-subtitle">AI에게 더 정확하고 일관된 결과를 이끌어내는 핵심 기법을 학습합니다.</div>
 
+    <!-- 통계 -->
+    <div class="home-stats">
+      <div class="stat-item"><span class="stat-num">04</span><span class="stat-label">기본 섹션</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num">14</span><span class="stat-label">패턴 섹션</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num">06</span><span class="stat-label">프레임워크</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num">24</span><span class="stat-label">총 학습 항목</span></div>
+    </div>
+
+    <!-- 기본 섹션 -->
     <div class="home-section">
-      <div class="home-section-label">기본 섹션</div>
+      <div class="home-section-header">
+        <span class="home-section-label">기본 섹션</span>
+        <span class="home-section-count">4 topics</span>
+      </div>
       <div class="home-grid">
         <a class="home-card basic" href="pages/p1.html">
-          <div class="hc-icon">📝</div>
-          <div class="hc-tag basic">기본</div>
+          <div class="hc-meta"><span class="hc-num">01</span><span class="hc-badge basic">기본</span></div>
+          <div class="hc-icon-wrap" id="ic-p1"></div>
           <div class="hc-title">프롬프트의 세 가지 유형</div>
-          <div class="hc-desc">서술형 · 지침형 · 함수형의 차이와 목적별 사용법을 익힙니다.</div>
+          <div class="hc-desc">서술형 · 지침형 · 함수형의 차이와 목적별 사용법</div>
         </a>
         <a class="home-card basic" href="pages/p2.html">
-          <div class="hc-icon">🎯</div>
-          <div class="hc-tag basic">기본</div>
+          <div class="hc-meta"><span class="hc-num">02</span><span class="hc-badge basic">기본</span></div>
+          <div class="hc-icon-wrap" id="ic-p2"></div>
           <div class="hc-title">제로샷 / 원샷 / 퓨샷</div>
-          <div class="hc-desc">예시 제공 수에 따른 AI 응답 정확도 변화를 이해합니다.</div>
+          <div class="hc-desc">예시 제공 수에 따른 AI 응답 정확도 변화</div>
         </a>
         <a class="home-card basic" href="pages/p3.html">
-          <div class="hc-icon">📐</div>
-          <div class="hc-tag basic">기본</div>
+          <div class="hc-meta"><span class="hc-num">03</span><span class="hc-badge basic">기본</span></div>
+          <div class="hc-icon-wrap" id="ic-p3"></div>
           <div class="hc-title">마크다운 프롬프트 작성법</div>
-          <div class="hc-desc">구조화된 마크다운으로 AI의 파싱 정확도를 높입니다.</div>
+          <div class="hc-desc">구조화된 마크다운으로 파싱 정확도 향상</div>
         </a>
         <a class="home-card basic" href="pages/p4.html">
-          <div class="hc-icon">⚖️</div>
-          <div class="hc-tag basic">기본</div>
+          <div class="hc-meta"><span class="hc-num">04</span><span class="hc-badge basic">기본</span></div>
+          <div class="hc-icon-wrap" id="ic-p4"></div>
           <div class="hc-title">표현 강도 · 우선순위 · 톤</div>
-          <div class="hc-desc">4단계 강도와 3단계 우선순위로 AI를 정밀하게 제어합니다.</div>
+          <div class="hc-desc">4단계 강도와 3단계 우선순위로 정밀하게 제어</div>
         </a>
       </div>
     </div>
 
+    <!-- 패턴 섹션 -->
     <div class="home-section">
-      <div class="home-section-label">패턴 섹션</div>
+      <div class="home-section-header">
+        <span class="home-section-label">패턴 섹션</span>
+        <span class="home-section-count">14 topics</span>
+      </div>
       <div class="home-grid">
         <a class="home-card pattern" href="pages/p5.html">
-          <div class="hc-icon">🎭</div>
-          <div class="hc-tag pattern">패턴</div>
+          <div class="hc-meta"><span class="hc-num">05</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p5"></div>
           <div class="hc-title">페르소나 패턴</div>
-          <div class="hc-desc">역할 부여로 전문성과 관점을 완전히 바꿉니다.</div>
+          <div class="hc-desc">역할 부여로 전문성과 관점을 완전히 바꾸기</div>
         </a>
         <a class="home-card pattern" href="pages/p6.html">
-          <div class="hc-icon">👤</div>
-          <div class="hc-tag pattern">패턴</div>
+          <div class="hc-meta"><span class="hc-num">06</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p6"></div>
           <div class="hc-title">이용자 페르소나 패턴</div>
-          <div class="hc-desc">답변을 받는 사람을 정의해 맞춤형 설명을 이끌어냅니다.</div>
+          <div class="hc-desc">답변을 받는 사람을 정의해 맞춤형 설명 유도</div>
         </a>
         <a class="home-card pattern" href="pages/p7.html">
-          <div class="hc-icon">🔀</div>
-          <div class="hc-tag pattern">패턴</div>
+          <div class="hc-meta"><span class="hc-num">07</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p7"></div>
           <div class="hc-title">대안 접근법 패턴</div>
-          <div class="hc-desc">4가지 비교 방식으로 최적의 선택지를 도출합니다.</div>
+          <div class="hc-desc">4가지 비교 방식으로 최적의 선택지 도출</div>
         </a>
         <a class="home-card pattern" href="pages/p8.html">
-          <div class="hc-icon">📋</div>
-          <div class="hc-tag pattern">패턴</div>
+          <div class="hc-meta"><span class="hc-num">08</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p8"></div>
           <div class="hc-title">레시피 패턴</div>
-          <div class="hc-desc">목표→현재→단계의 구조로 명확한 절차를 생성합니다.</div>
+          <div class="hc-desc">목표→현재→단계의 구조로 명확한 절차 생성</div>
         </a>
         <a class="home-card pattern" href="pages/p9.html">
-          <div class="hc-icon">🔄</div>
-          <div class="hc-tag pattern">패턴</div>
+          <div class="hc-meta"><span class="hc-num">09</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p9"></div>
           <div class="hc-title">뒤집힌 상호작용 패턴</div>
-          <div class="hc-desc">AI가 먼저 질문해 충분한 정보를 수집한 뒤 결과물을 만듭니다.</div>
+          <div class="hc-desc">AI가 먼저 질문해 정보를 수집한 뒤 생성</div>
         </a>
         <a class="home-card pattern" href="pages/p10.html">
-          <div class="hc-icon">🧠</div>
-          <div class="hc-tag pattern">패턴</div>
+          <div class="hc-meta"><span class="hc-num">10</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p10"></div>
           <div class="hc-title">인지 검증자 패턴</div>
-          <div class="hc-desc">복잡한 질문을 하위 문제로 분해해 정확도를 높입니다.</div>
+          <div class="hc-desc">복잡한 질문을 하위 문제로 분해해 정확도 향상</div>
+        </a>
+        <a class="home-card pattern" href="pages/p11.html">
+          <div class="hc-meta"><span class="hc-num">11</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p11"></div>
+          <div class="hc-title">게임 플레이 패턴</div>
+          <div class="hc-desc">AI를 게임 엔진으로 활용해 텍스트 어드벤처 제작</div>
+        </a>
+        <a class="home-card pattern" href="pages/p12.html">
+          <div class="hc-meta"><span class="hc-num">12</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p12"></div>
+          <div class="hc-title">질문 개선 패턴</div>
+          <div class="hc-desc">AI가 내 질문을 먼저 분석해 더 나은 질문으로 변환</div>
+        </a>
+        <a class="home-card pattern" href="pages/p13.html">
+          <div class="hc-meta"><span class="hc-num">13</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p13"></div>
+          <div class="hc-title">팩트체크 목록 패턴</div>
+          <div class="hc-desc">검증이 필요한 항목을 자동 추출해 신뢰도 향상</div>
+        </a>
+        <a class="home-card pattern" href="pages/p14.html">
+          <div class="hc-meta"><span class="hc-num">14</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p14"></div>
+          <div class="hc-title">메타언어 생성 패턴</div>
+          <div class="hc-desc">나만의 단축어를 정의해 반복 작업 즉시 실행</div>
+        </a>
+        <a class="home-card pattern" href="pages/p15.html">
+          <div class="hc-meta"><span class="hc-num">15</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p15"></div>
+          <div class="hc-title">리플렉션 패턴</div>
+          <div class="hc-desc">초안→비평→개선의 3단계로 결과물 품질 향상</div>
+        </a>
+        <a class="home-card pattern" href="pages/p16.html">
+          <div class="hc-meta"><span class="hc-num">16</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p16"></div>
+          <div class="hc-title">아웃라인 확장 패턴</div>
+          <div class="hc-desc">큰 구조 먼저, 원하는 파트만 단계적으로 확장</div>
+        </a>
+        <a class="home-card pattern" href="pages/p17.html">
+          <div class="hc-meta"><span class="hc-num">17</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p17"></div>
+          <div class="hc-title">컨텍스트 관리자 패턴</div>
+          <div class="hc-desc">대화 전체의 방향을 미리 선언해 일관성 유지</div>
+        </a>
+        <a class="home-card pattern" href="pages/p18.html">
+          <div class="hc-meta"><span class="hc-num">18</span><span class="hc-badge pattern">패턴</span></div>
+          <div class="hc-icon-wrap" id="ic-p18"></div>
+          <div class="hc-title">무한 생성 패턴</div>
+          <div class="hc-desc">변수만 바꿔 같은 구조의 결과물을 무한 생성</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 프레임워크 섹션 -->
+    <div class="home-section">
+      <div class="home-section-header">
+        <span class="home-section-label">프레임워크 섹션</span>
+        <span class="home-section-count">6 topics</span>
+      </div>
+      <div class="home-grid">
+        <a class="home-card framework" href="pages/f1.html">
+          <div class="hc-meta"><span class="hc-num">F1</span><span class="hc-badge framework">프레임워크</span></div>
+          <div class="hc-icon-wrap" id="ic-f1"></div>
+          <div class="hc-title">5W1H</div>
+          <div class="hc-desc">육하원칙으로 상황을 정의해 구체적 전략 보고서 작성</div>
+        </a>
+        <a class="home-card framework" href="pages/f2.html">
+          <div class="hc-meta"><span class="hc-num">F2</span><span class="hc-badge framework">프레임워크</span></div>
+          <div class="hc-icon-wrap" id="ic-f2"></div>
+          <div class="hc-title">CO-STAR</div>
+          <div class="hc-desc">6가지 요소로 완성도 높은 비즈니스 문서 작성</div>
+        </a>
+        <a class="home-card framework" href="pages/f3.html">
+          <div class="hc-meta"><span class="hc-num">F3</span><span class="hc-badge framework">프레임워크</span></div>
+          <div class="hc-icon-wrap" id="ic-f3"></div>
+          <div class="hc-title">FOCUS</div>
+          <div class="hc-desc">측정 가능한 목표 중심의 B2B 마케팅 메시지 설계</div>
+        </a>
+        <a class="home-card framework" href="pages/f4.html">
+          <div class="hc-meta"><span class="hc-num">F4</span><span class="hc-badge framework">프레임워크</span></div>
+          <div class="hc-icon-wrap" id="ic-f4"></div>
+          <div class="hc-title">ROSES</div>
+          <div class="hc-desc">역할·목표·시나리오로 협상 전략을 단계적으로 설계</div>
+        </a>
+        <a class="home-card framework" href="pages/f5.html">
+          <div class="hc-meta"><span class="hc-num">F5</span><span class="hc-badge framework">프레임워크</span></div>
+          <div class="hc-icon-wrap" id="ic-f5"></div>
+          <div class="hc-title">RISEN</div>
+          <div class="hc-desc">절차와 범위 제한으로 분쟁 대응을 정확하게 처리</div>
+        </a>
+        <a class="home-card framework" href="pages/f6.html">
+          <div class="hc-meta"><span class="hc-num">F6</span><span class="hc-badge framework">프레임워크</span></div>
+          <div class="hc-icon-wrap" id="ic-f6"></div>
+          <div class="hc-title">BAB</div>
+          <div class="hc-desc">이전·이후·연결의 스토리 구조로 강력한 설득 제작</div>
         </a>
       </div>
     </div>
@@ -220,7 +370,22 @@
 
 <script src="sidebar.js"></script>
 <script>
-  renderSidebar('index.html');
+renderSidebar('index.html');
+
+// 홈 카드에 SVG 아이콘 삽입
+const iconMap = {
+  'ic-p1': 'doc', 'ic-p2': 'target', 'ic-p3': 'code', 'ic-p4': 'sliders',
+  'ic-p5': 'user', 'ic-p6': 'users', 'ic-p7': 'shuffle', 'ic-p8': 'list',
+  'ic-p9': 'refresh', 'ic-p10': 'brain', 'ic-p11': 'gamepad', 'ic-p12': 'search',
+  'ic-p13': 'check', 'ic-p14': 'hash', 'ic-p15': 'mirror', 'ic-p16': 'layers',
+  'ic-p17': 'settings', 'ic-p18': 'infinity',
+  'ic-f1': 'map', 'ic-f2': 'star', 'ic-f3': 'focus',
+  'ic-f4': 'flower', 'ic-f5': 'trend', 'ic-f6': 'bridge',
+};
+Object.entries(iconMap).forEach(([id, key]) => {
+  const el = document.getElementById(id);
+  if (el && ICONS[key]) el.innerHTML = ICONS[key].replace('width="14" height="14"', 'width="16" height="16"');
+});
 </script>
 </body>
 </html>

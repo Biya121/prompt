@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨텍스트 관리자 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">컨텍스트 관리자 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">컨텍스트 관리자 패턴</div>
+    <div class="page-intro">대화 전체의 방향을 미리 세팅하는 패턴입니다. 상황, 목적, 제약, 원하지 않는 것을 한 번에 선언해 두면, 이후 모든 질문에 그 맥락이 자동으로 반영됩니다. 긴 대화에서 매번 같은 배경을 설명하는 수고를 없애줍니다.</div>
+
+    <div class="section">
+      <div class="section-title">컨텍스트 선언 블록 6가지 요소</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>요소</th><th>내용</th><th>예시</th></tr></thead>
+          <tbody>
+            <tr><td><strong>상황</strong></td><td>지금 처한 구체적인 상황</td><td>의료기기 중소기업, 수출 준비 중</td></tr>
+            <tr><td><strong>나의 수준</strong></td><td>이 주제에 대한 사전 지식과 경험</td><td>ERP 없음, 엑셀 중심 운영</td></tr>
+            <tr><td><strong>목적</strong></td><td>이 답변으로 무엇을 결정하거나 실행할 것인가</td><td>수출 자동화 방안을 이번 달 내 결정</td></tr>
+            <tr><td><strong>제약</strong></td><td>시간, 예산, 인력, 기술적 한계</td><td>IT 예산 월 100만원, 개발 인력 없음</td></tr>
+            <tr><td><strong>원하지 않는 것</strong></td><td>답변에서 제외할 방향과 내용</td><td>ERP 도입, 개발자 고용 전제 솔루션 제외</td></tr>
+            <tr><td><strong>집중 방향</strong></td><td>특히 중점을 두고 싶은 관점</td><td>고객 감정 요소, 실무 즉시 적용 가능성</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">예시 1 · 마케팅 이메일 개선 (집중 방향 지정)</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">이메일 내용과 함께 마케팅 전문가 역할, 분석 초점(감정 요소, 고객 관심), 무시할 요소(길이, 문법)를 미리 선언합니다. 답변의 방향이 처음부터 원하는 곳으로 맞춰집니다.</div>
+          <div class="code-wrap">
+            <pre">#입력
+[이메일 원문]
+제목 : [제품명] 출시 안내
+안녕하세요, [고객명]님.
+[제품명]이 드디어 출시되었습니다!
+주요 특징 :
+- 초고속 처리로 시간 절약
+- 사용자 친화적 인터페이스
+- 친환경 소재 사용
+
+#처리
+당신은 "마케팅 전문가"입니다.
+
+##집중할 것
+- 고객이 가장 관심을 끌 만한 기능과 혜택
+- 감정적 요소가 잘 드러나는지
+
+##무시할 것
+- 이메일 길이
+- 문법적 정확성
+
+문제점을 분석하고 개선된 이메일을 작성해 주세요.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">예시 2 · 대화 전체에 적용되는 컨텍스트 선언</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">대화 시작 시 회사 상황, 기술 환경, 절대 제외 사항을 한 번만 선언합니다. 이후 어떤 질문을 해도 이 범위 안에서만 답변이 이루어집니다.</div>
+          <div class="code-wrap">
+            <pre">아래 조건은 이 대화 전체에 적용됩니다.
+모든 답변은 이 컨텍스트 안에서만 이루어지도록 하세요.
+
+##회사 상황
+- 업종 : 의료기기 중소기업
+- 직원 : 30명, 무역팀 3명
+- 주요 수출국 : 미국 60%, 독일 30%, 기타 10%
+- 연 수출액 : 약 50억 원
+
+##기술 환경
+- ERP 없음, 엑셀 중심 운영
+- 개발 인력 없음
+- IT 예산 : 월 100만 원 이내
+
+##절대 제외 사항
+- 대규모 시스템 도입 제안 (ERP 등)
+- 개발자 고용 전제의 솔루션
+- 6개월 이상 구축 기간이 필요한 방안
+
+컨텍스트를 이해했다면 "준비 완료."라고만 답하세요.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+          <div class="callout green">
+            <div class="callout-icon">✅</div>
+            <div><strong>이후 사용 예시</strong><br>선언 후 → "수출 서류 자동화 방법 알려 줘."<br>AI가 ERP, 개발자 불필요, 월 100만 원 내, 즉시 적용 가능한 방안만 답변합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-icon">💡</div>
+      <div><strong>활용 팁</strong><br>컨텍스트 선언은 새 대화를 시작할 때마다 설정해야 합니다. 자주 쓰는 상황이라면 선언 블록을 텍스트 파일로 저장해 두고, 새 대화 시작 시 붙여넣는 방식으로 활용하면 편리합니다.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p17.html');</script>
+</body>
+</html>

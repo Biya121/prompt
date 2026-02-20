@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아웃라인 확장 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">아웃라인 확장 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">아웃라인 확장 패턴</div>
+    <div class="page-intro">복잡한 주제를 한 번에 상세하게 요청하면 방향이 어긋나기 쉽습니다. 이 패턴은 큰 구조(아웃라인)를 먼저 확인한 뒤, 원하는 파트만 단계적으로 깊이 확장하는 방식입니다. 교육과정, 보고서, 사업 계획서처럼 구조가 복잡한 결과물에 특히 효과적입니다.</div>
+
+    <div class="section">
+      <div class="section-title">3단계 확장 구조</div>
+      <div class="priority-list">
+        <div class="priority-row blue"><span class="priority-dot">1</span><div><span class="priority-label">대주제 아웃라인</span> 최상위 구조와 각 항목의 제목·한 줄 설명만 작성. 세부 내용은 아직 X.</div></div>
+        <div class="priority-row yellow"><span class="priority-dot">2</span><div><span class="priority-label">선택 파트 확장</span> 원하는 특정 파트만 골라 상세 아웃라인으로 확장. 학습 목표·실습 내용·시간 포함.</div></div>
+        <div class="priority-row red"><span class="priority-dot">3</span><div><span class="priority-label">최소 단위 완성</span> 특정 하위 항목을 완성본(스크립트·코드·문서)으로 작성.</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">1단계 · 대주제 아웃라인 요청</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">전체 구조의 큰 그림만 먼저 봅니다. 세부 내용 없이 항목 제목과 한 줄 설명만 요청해 방향이 맞는지 확인합니다.</div>
+          <div class="code-wrap">
+            <pre">아래 주제의 최상위 구조만 작성하세요.
+각 항목의 제목과 한 줄 설명만 포함하세요.
+세부 내용은 아직 작성하지 마세요.
+
+주제 : "무역 데이터 자동화 심화 과정" (총 40시간)</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2단계 · 선택한 파트 확장</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">1단계에서 확인한 구조 중 원하는 파트를 골라 상세하게 확장합니다. 학습 목표, 실습 내용, 예상 소요 시간까지 포함시킵니다.</div>
+          <div class="code-wrap">
+            <pre">다섯 번째 주의 상세 아웃라인을 작성하세요.
+각 수업에 아래 내용을 포함하세요.
+- 학습 목표
+- 실습 내용
+- 예상 소요 시간</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3단계 · 최소 단위 완성본 작성</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">아웃라인의 특정 항목 하나를 실제 사용 가능한 완성본으로 작성합니다. 강의 스크립트, 실습 코드, 체크리스트 등 바로 쓸 수 있는 결과물을 얻습니다.</div>
+          <div class="code-wrap">
+            <pre">3일차 수업의 강의 스크립트와
+실습 코드를 완성본으로 작성하세요.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">응용 · 비중과 우선순위 포함 아웃라인</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">각 파트의 전체 대비 비중(%)과 우선순위를 함께 표시하면, 시간 배분과 중요도 파악이 한눈에 됩니다.</div>
+          <div class="code-wrap">
+            <pre">아래 교육과정의 아웃라인을 작성하되
+각 파트의 전체 대비 비중(%)과
+우선순위를 함께 표시하세요.
+
+[조건]
+- 실습 코드가 이론 설명보다 비중 높아야 함
+- 수강생 수준 : Python 기초 수료자
+- 총 교육 시간 : 40시간
+
+주제 : "무역 데이터 자동화 심화 과정"</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-icon">💡</div>
+      <div><strong>핵심 원칙</strong><br>한 번에 모든 것을 요청하지 않습니다. 먼저 큰 그림을 확인하고, 방향이 맞으면 그때 세부를 요청하세요. 이 방식이 결과물의 방향 오류를 가장 효과적으로 방지합니다.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p16.html');</script>
+</body>
+</html>
