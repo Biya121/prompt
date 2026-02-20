@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>제로샷 / 원샷 / 퓨샷 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span>
+      <span class="sep">›</span>
+      <span class="current">제로샷 / 원샷 / 퓨샷</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag basic">기본</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">제로샷 / 원샷 / 퓨샷 프롬프팅</div>
+    <div class="page-intro">예시를 얼마나 제공하느냐에 따라 결과물의 정확도와 일관성이 크게 달라집니다. 복잡하거나 전문적인 작업일수록 예시를 많이 줄수록 좋습니다.</div>
+
+    <div class="section">
+      <div class="section-title">① 제로샷 (Zero-shot)</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">예시 없이 바로 지시하는 방식. 간단하고 명확한 요청, 또는 AI가 충분히 이해할 수 있는 일반적 작업에 적합합니다.</div>
+          <div class="code-wrap">
+            <pre>아래 리뷰의 감정을 분류해 주세요.
+리뷰 : "배송이 너무 늦어서 실망했어요."</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">② 원샷 (One-shot)</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">예시를 한 개 제공하는 방식. AI가 원하는 출력 형식을 이해하도록 방향을 잡아줄 때 사용합니다.</div>
+          <div class="code-wrap">
+            <pre>감정을 분류해 주세요.
+[예시] "배송이 너무 늦어서 실망했어요." → 감정 : 부정
+
+분류 대상 : "역대급 만족이야." →</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">③ 퓨샷 (Few-shot)</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">예시를 두 개 이상 제공하는 방식. 패턴을 충분히 학습시켜 일관된 결과를 얻습니다. HS code 분류 같은 전문 영역에서 특히 효과적입니다.</div>
+          <div class="code-wrap">
+            <pre>HS code를 분류해 주세요.
+
+[예시1] 면으로 만든 남성용 티셔츠    → 6109.10
+[예시2] 폴리에스테르 여성 블라우스   → 6206.40
+[예시3] 아동용 데님 자켓             → 6211.20
+
+분류 대상 : 울 혼방 남성 재킷 →</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+          <div class="callout green">
+            <div class="callout-icon">✅</div>
+            <div><strong>결과 예시</strong><br>울 혼방 남성 재킷 → HS Code <strong>6203.31</strong><br>분류 근거: 제62류 직물제 의류 › 남성용 재킷 › 양모(울) 또는 섬유사</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p2.html');</script>
+</body>
+</html>

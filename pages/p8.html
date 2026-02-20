@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>레시피 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span>
+      <span class="sep">›</span>
+      <span class="current">레시피 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">레시피 패턴</div>
+    <div class="page-intro">구체적인 순서가 필요할 때 사용합니다. "수출 자동화 어떻게 해?" → 두루뭉술한 답. 레시피 패턴은 <strong>목표 → 현재 상태 → 단계별 절차</strong>를 순서 있는 행동 지침으로 만들어냅니다.</div>
+
+    <div class="section">
+      <div class="section-title">기본 레시피 패턴</div>
+      <div class="code-wrap">
+        <pre>#목표
+Python 초보자가 무역 HS code 자동 분류 프로그램 만들기
+
+#현재 상태
+- Python 설치만 되어 있음
+- 프로그래밍 경험 없음
+- 엑셀로 품목 데이터 500개 보유
+
+#요청
+위의 목표 달성을 위한 단계별 레시피를 작성해 주세요.
+각 단계는 아래 형식으로.
+
+##STEP {번호} : {단계명}
+- 할 일 : {구체적 행동}
+- 소요 시간 : {예상 기간}
+- 완료 기준 : {이것이 되면 다음으로}
+- 주의사항 : {흔한 실수}</pre>
+        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">분기 상황 포함 레시피 패턴</div>
+      <div class="callout gray">
+        <div class="callout-icon">ℹ️</div>
+        <div>각 단계에서 결과에 따라 다음 행동이 달라지는 분기를 함께 정의합니다.</div>
+      </div>
+      <div class="code-wrap" style="margin-top:12px">
+        <pre>무역 계약 클레임 절차를 단계별로 작성해 주세요.
+단, 각 단계에서 발생할 수 있는 분기 상황도 포함.
+
+형식 :
+STEP N. {행동}
+- 정상 : {이 결과면 다음 단계로}
+- 이상 : {이 결과면 어떻게 대응}</pre>
+        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p8.html');</script>
+</body>
+</html>

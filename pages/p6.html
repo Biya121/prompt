@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이용자 페르소나 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span>
+      <span class="sep">›</span>
+      <span class="current">이용자 페르소나 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">이용자 페르소나 패턴</div>
+    <div class="page-intro"><strong>페르소나 패턴</strong>이 AI의 역할을 정의한다면, <strong>이용자 페르소나 패턴</strong>은 "이 답변을 듣는 사람"을 정의합니다. 같은 질문도 대상에 따라 완전히 다른 설명이 나옵니다.</div>
+
+    <div class="section">
+      <div class="section-title">같은 질문, 다른 대상 — 블록체인 무역 금융 활용</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>이용자</th><th>기대 답변 방식</th></tr></thead>
+          <tbody>
+            <tr><td>무역 처음 배우는 대학생</td><td>쉬운 개념 + 비유 + 일상 예시</td></tr>
+            <tr><td>중소기업 수출 담당 팀장</td><td>실무 적용 사례 + 비용 절감 포인트</td></tr>
+            <tr><td>금융기관 IT 의사결정자</td><td>기술 스펙 + ROI + 구현 난이도</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">이용자 페르소나 정의 실전 예시</div>
+      <div class="code-wrap">
+        <pre>#이용자 정보
+- 직책 : 중소기업 대표 (제조업, 직원 30명)
+- 수출 경험 : 국내 영업만 10년, 해외 수출 처음
+- 관심사 : 리스크 최소화, 빠른 실행
+- 우려사항 : 복잡하고 어려울 것 같다는 막연한 두려움
+- 시간 : 바빠서 긴 글을 읽지 않음
+
+#지시
+위의 이용자에게 첫 수출 준비 3단계를 설명하세요.
+전문 용어는 최소화, 각 단계는 3줄 이내로.</pre>
+        <button class="copy-btn" onclick="copyCode(this)">복사</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">이용자 페르소나 설계 체크리스트</div>
+      <div class="checklist">
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>이 사람의 직업과 역할은?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>이 주제에 대한 사전 지식은 어느 정도인가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>이 정보로 무엇을 결정하거나 실행할 예정인가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>지금 어떤 상태인가? (급함 / 여유)</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>얼마나 긴 답변을 읽을 여유가 있는가?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>가장 두려워하는 것은? 가장 원하는 것은?</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>절대 쓰면 안 되는 언어나 표현이 있나?</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p6.html');</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>페르소나 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span>
+      <span class="sep">›</span>
+      <span class="current">페르소나 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">페르소나 패턴</div>
+    <div class="page-intro">AI에게 특정 역할을 부여하면 전문성과 말투가 달라집니다. "계약서 검토해 줘"라고만 하면 일반적인 설명이 나오지만, 변호사/CFO/신입사원 등 페르소나를 지정하면 관점이 완전히 달라집니다.</div>
+
+    <div class="section">
+      <div class="section-title">좋은 페르소나의 4가지 요소</div>
+      <div class="callout gray">
+        <div class="callout-icon">🔑</div>
+        <div>당신은 <strong>[역할]</strong>입니다. <strong>[경력/배경]</strong>을 가지고 있으며 <strong>[전문 분야]</strong>에 특화되어 있습니다. <strong>[말투/태도]</strong>로 응답하세요.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">페르소나 예시 3가지</div>
+      <div class="block">
+        <div class="block-header">
+          <span class="block-icon">⚖️</span>
+          <span class="block-title">관세사 페르소나</span>
+        </div>
+        <div class="block-body">
+          <div class="code-wrap">
+            <pre>당신은 20년 경력의 관세사입니다.
+FTA 협정세율과 원산지 규정의 전문가로,
+중소기업 무역 담당자에게 복잡한 내용을
+쉽고 실용적으로 설명하는 것이 특기입니다.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-header">
+          <span class="block-icon">💻</span>
+          <span class="block-title">비평가 페르소나 (까다로운 시니어 개발자)</span>
+        </div>
+        <div class="block-body">
+          <div class="code-wrap">
+            <pre>당신은 까다로운 시니어 개발자입니다.
+코드 리뷰 시 성능, 보안, 가독성을 엄격하게 평가하며,
+칭찬보다 개선점을 먼저 지적하는 스타일입니다.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-header">
+          <span class="block-icon">🗣️</span>
+          <span class="block-title">멀티 페르소나 (3인 관점 토론)</span>
+        </div>
+        <div class="block-body">
+          <div class="code-wrap">
+            <pre>다음 3명의 전문가 입장에서
+우리 제품의 동남아 수출 전략을 분석해 주세요.
+
+김부장 : 영업 15년, 낙관적, 현장 중심
+이박사 : 시장 조사 전문, 데이터 중심, 신중함
+박대표 : 스타트업 창업가, 속도 중시, 리스크 감수
+
+각자의 관점에서 찬반 의견을 제시하세요.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p5.html');</script>
+</body>
+</html>

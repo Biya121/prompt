@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대안 접근법 패턴 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span>
+      <span class="sep">›</span>
+      <span class="current">대안 접근법 패턴</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag pattern">패턴</span></div>
+      <a href="../index.html" class="home-btn">🏠 홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">대안 접근법 패턴</div>
+    <div class="page-intro">일반 프롬프트는 AI가 임의로 하나를 선택합니다. 대안 패턴은 <strong>모든 방법을 나열하고 장단점을 비교</strong>하게 하여 선택권을 사람에게 돌려줍니다.</div>
+
+    <div class="section">
+      <div class="section-title">유형 1 · 단순 나열형</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">최소 N가지를 제시하고, 각각 핵심 원리 / 적합 상황 / 단점 / 난이도로 구조화합니다.</div>
+          <div class="code-wrap">
+            <pre>#지시
+아래 문제를 해결하는 방법을 최소 4가지 제시.
+각 방법은 아래 형식으로 작성.
+
+##방법 {번호} : {이름}
+- 핵심 원리 : {한 줄}
+- 적합한 상황 : {언제 쓰면 좋은가}
+- 단점 : {주의할 점}
+- 난이도 : {초급/중급/고급}
+
+#문제 : 수출 통관 서류를 자동으로 생성하고 싶음.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">유형 2 · 축 기반 비교형</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">평가 기준(축)을 직접 정의하여 여러 옵션을 동일한 기준으로 비교합니다.</div>
+          <div class="code-wrap">
+            <pre>아래 4가지를 다음 기준으로 비교 분석하세요.
+
+평가 기준
+- 개발 속도 : (빠름 / 보통 / 느림)
+- 유지 보수 난이도 : (쉬움 / 보통 / 어려움)
+- 비용 : (무료 / 저비용 / 고비용)
+- 확장성 : (높음 / 보통 / 낮음)
+
+비교 대상 : FastAPI, Django, Flask, Node.js Express
+용도 : 무역 데이터 처리 REST API 서버</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">유형 3 · 상황별 분기형</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">상황이 다를 때 각각에 맞는 최적 솔루션을 독립적으로 추천받습니다.</div>
+          <div class="code-wrap">
+            <pre>상황별 가장 적합한 DB를 추천해 주세요.
+각 상황은 독립적으로 판단.
+
+상황 A : 스타트업, 개발자 1명, 빠른 MVP
+상황 B : 무역 데이터 10년치, 복잡한 통계 쿼리
+상황 C : 실시간 환율, 초당 1000건 업데이트
+상황 D : 문서 형태의 비정형 통관 데이터 저장
+
+형식 : [1순위 {DB명} - {이유 한 줄}, 2순위 ...]</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">유형 4 · 역발상 대안형</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">일반 해결책 외에 "하지 않는 선택"과 "문제 자체를 재정의"하는 방법도 포함합니다.</div>
+          <div class="code-wrap">
+            <pre>아래 문제에 대해
+① 일반적인 해결책뿐 아니라
+② 하지 않는 선택지와
+③ 문제 자체를 재정의하는 방법도 포함하여
+총 다섯 가지를 제시하세요.
+
+#문제 : 수입 통관 처리 시간이 너무 오래 걸린다.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/p7.html');</script>
+</body>
+</html>
