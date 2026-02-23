@@ -36,6 +36,10 @@
   --c-fw-bg:     #edf1f8;
   --c-fw-dim:    #cfdaee;
 
+  --c-tech:      #4a2d7a;   /* 딥 퍼플 */
+  --c-tech-bg:   #f3edf8;
+  --c-tech-dim:  #dccfee;
+
   --code-bg:   #f2f2ee;
   --code-border: #e0e0d8;
 
@@ -209,6 +213,7 @@ body {
 .badge-basic     { background: var(--c-basic-dim);   color: var(--c-basic); }
 .badge-pattern   { background: var(--c-pattern-dim); color: var(--c-pattern); }
 .badge-framework { background: var(--c-fw-dim);      color: var(--c-fw); }
+.badge-technique { background: var(--c-tech-dim);    color: var(--c-tech); }
 
 /* 사이드바 하단 필터 */
 .sidebar-footer {
@@ -289,6 +294,7 @@ body {
 .meta-tag.basic     { background: var(--c-basic-dim);   color: var(--c-basic); }
 .meta-tag.pattern   { background: var(--c-pattern-dim); color: var(--c-pattern); }
 .meta-tag.framework { background: var(--c-fw-dim);      color: var(--c-fw); }
+.meta-tag.technique { background: var(--c-tech-dim);    color: var(--c-tech); }
 
 /* ══════════════════════════════
    PAGE

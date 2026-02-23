@@ -91,6 +91,7 @@
 .hc-badge.basic     { background: var(--c-basic-dim);   color: var(--c-basic); }
 .hc-badge.pattern   { background: var(--c-pattern-dim); color: var(--c-pattern); }
 .hc-badge.framework { background: var(--c-fw-dim);      color: var(--c-fw); }
+.hc-badge.technique { background: var(--c-tech-dim);    color: var(--c-tech); }
 
 /* 카드 본문 */
 .hc-icon-wrap {
@@ -117,7 +118,8 @@
 /* 카테고리별 왼쪽 보더 포인트 */
 .home-card.basic::after,
 .home-card.pattern::after,
-.home-card.framework::after {
+.home-card.framework::after,
+.home-card.technique::after {
   content: '';
   position: absolute; left: 0; top: 20%; bottom: 20%;
   width: 2px; border-radius: 0 2px 2px 0;
@@ -126,6 +128,7 @@
 .home-card.basic::after    { background: var(--c-basic); }
 .home-card.pattern::after  { background: var(--c-pattern); }
 .home-card.framework::after { background: var(--c-fw); }
+.home-card.technique::after { background: var(--c-tech); }
 .home-card:hover::after { opacity: 1; }
 
 /* 통계 바 */
@@ -179,7 +182,7 @@
   <div class="home-page">
     <div class="home-eyebrow">Prompt Engineering Guide</div>
     <div class="home-title">프롬프트 완전 가이드</div>
-    <div class="home-subtitle">AI에게 더 정확하고 일관된 결과를 이끌어내는 핵심 기법을 학습합니다.</div>
+    <div class="home-subtitle">AI에게 더 정확하고 일관된 결과를 이끌어내는 핵심 기법과 프레임워크를 체계적으로 학습합니다.</div>
 
     <!-- 통계 -->
     <div class="home-stats">
@@ -189,7 +192,9 @@
       <div class="stat-divider"></div>
       <div class="stat-item"><span class="stat-num">06</span><span class="stat-label">프레임워크</span></div>
       <div class="stat-divider"></div>
-      <div class="stat-item"><span class="stat-num">24</span><span class="stat-label">총 학습 항목</span></div>
+      <div class="stat-item"><span class="stat-num">05</span><span class="stat-label">기법</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><span class="stat-num">29</span><span class="stat-label">총 학습 항목</span></div>
     </div>
 
     <!-- 기본 섹션 -->
@@ -365,6 +370,45 @@
         </a>
       </div>
     </div>
+    <!-- 기법 섹션 -->
+    <div class="home-section">
+      <div class="home-section-header">
+        <span class="home-section-label">기법 섹션</span>
+        <span class="home-section-count">5 topics</span>
+      </div>
+      <div class="home-grid">
+        <a class="home-card technique" href="pages/t1.html">
+          <div class="hc-meta"><span class="hc-num">T1</span><span class="hc-badge technique">기법</span></div>
+          <div class="hc-icon-wrap" id="ic-t1"></div>
+          <div class="hc-title">다중 관점 기법</div>
+          <div class="hc-desc">여러 입장과 시각을 동시에 소환해 문제를 입체적으로 분석</div>
+        </a>
+        <a class="home-card technique" href="pages/t2.html">
+          <div class="hc-meta"><span class="hc-num">T2</span><span class="hc-badge technique">기법</span></div>
+          <div class="hc-icon-wrap" id="ic-t2"></div>
+          <div class="hc-title">심사숙고 유도 기법</div>
+          <div class="hc-desc">AI가 결론으로 달려가지 않고 충분히 생각하도록 강제하기</div>
+        </a>
+        <a class="home-card technique" href="pages/t3.html">
+          <div class="hc-meta"><span class="hc-num">T3</span><span class="hc-badge technique">기법</span></div>
+          <div class="hc-icon-wrap" id="ic-t3"></div>
+          <div class="hc-title">CoT 기법</div>
+          <div class="hc-desc">중간 추론 단계를 하나씩 거쳐 답에 도달하는 사고의 연쇄</div>
+        </a>
+        <a class="home-card technique" href="pages/t4.html">
+          <div class="hc-meta"><span class="hc-num">T4</span><span class="hc-badge technique">기법</span></div>
+          <div class="hc-icon-wrap" id="ic-t4"></div>
+          <div class="hc-title">APE 기법</div>
+          <div class="hc-desc">AI가 스스로 최적 프롬프트를 생성·평가·개선하도록 요청하기</div>
+        </a>
+        <a class="home-card technique" href="pages/t5.html">
+          <div class="hc-meta"><span class="hc-num">T5</span><span class="hc-badge technique">기법</span></div>
+          <div class="hc-icon-wrap" id="ic-t5"></div>
+          <div class="hc-title">프롬프트 작성 5가지 열쇠</div>
+          <div class="hc-desc">모든 기법의 뿌리가 되는 다섯 가지 핵심 원칙</div>
+        </a>
+      </div>
+    </div>
   </div>
 </main>
 
@@ -381,6 +425,8 @@ const iconMap = {
   'ic-p17': 'settings', 'ic-p18': 'infinity',
   'ic-f1': 'map', 'ic-f2': 'star', 'ic-f3': 'focus',
   'ic-f4': 'flower', 'ic-f5': 'trend', 'ic-f6': 'bridge',
+  'ic-t1': 'eye', 'ic-t2': 'brain', 'ic-t3': 'link',
+  'ic-t4': 'cpu', 'ic-t5': 'key',
 };
 Object.entries(iconMap).forEach(([id, key]) => {
   const el = document.getElementById(id);

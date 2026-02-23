@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다중 관점 기법 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">다중 관점 기법</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag technique">기법</span></div>
+      <a href="../index.html" class="home-btn">홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">다중 관점 기법</div>
+    <div class="page-intro">하나의 주제를 단일 시각으로만 바라보면 놓치는 것이 생깁니다. 다중 관점 기법은 서로 다른 입장, 전문 분야, 시간대를 동시에 소환해 문제를 입체적으로 분석합니다. 관점들이 충돌하는 지점에서 진짜 문제가 보이고, 동의하는 지점에서 확실한 진실이 드러납니다.</div>
+
+    <div class="section">
+      <div class="section-title">단일 관점의 한계</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>관점</th><th>강점</th><th>빠지는 것</th></tr></thead>
+          <tbody>
+            <tr><td>전문가 관점만</td><td>실용성 높음</td><td>감성·공감 부재</td></tr>
+            <tr><td>사용자 관점만</td><td>공감 높음</td><td>전문성 부재</td></tr>
+            <tr><td>낙관론만</td><td>가능성 포착</td><td>리스크 간과</td></tr>
+            <tr><td>비관론만</td><td>리스크 포착</td><td>기회 간과</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">다중 관점이 만드는 것</div>
+      <div class="priority-list">
+        <div class="priority-row blue"><span class="priority-dot">→</span><div><span class="priority-label">충돌 지점</span> 서로 다른 관점이 부딪히는 곳에 진짜 문제가 숨어 있습니다.</div></div>
+        <div class="priority-row yellow"><span class="priority-dot">→</span><div><span class="priority-label">동의 지점</span> 모든 관점이 동의하는 곳이 확실한 진실입니다.</div></div>
+        <div class="priority-row red"><span class="priority-dot">→</span><div><span class="priority-label">보완 지점</span> 관점들이 서로를 채워주는 곳에 완전한 해결책이 있습니다.</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5가지 분석 차원</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>차원</th><th>핵심 질문</th></tr></thead>
+          <tbody>
+            <tr><td><strong>이해관계자</strong></td><td>관련된 사람들은 각각 무엇을 원하는가?</td></tr>
+            <tr><td><strong>전문 분야</strong></td><td>다른 학문과 직종은 이 문제를 어떻게 정의하는가?</td></tr>
+            <tr><td><strong>시간</strong></td><td>과거의 결정이 현재에 어떤 영향을 주고, 지금의 선택은 미래를 어떻게 바꾸는가?</td></tr>
+            <tr><td><strong>가치관</strong></td><td>어떤 철학과 우선순위로 보느냐에 따라 답이 달라지는가?</td></tr>
+            <tr><td><strong>문화·맥락</strong></td><td>다른 환경과 배경에서는 이 문제가 어떻게 보이는가?</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">방법 1 · 병렬 관점 소환</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">여러 관점을 동시에 독립적으로 분석한 뒤, 마지막에 교차점을 찾습니다. 단순 나열이 아니라 관점 간의 교차점을 찾는 것이 핵심입니다.</div>
+          <div class="code-wrap">
+            <pre>아래 주제를 4가지 관점에서 동시에 분석하세요.
+각 관점은 독립적으로 분석하되,
+마지막에 관점들이 만나는 교차점을 찾아 주세요.
+
+관점 : 경제학 / 심리학 / 법률 / 현장 실무자
+
+주제 : "중소기업 수출 자동화 도입의 득과 실"</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">방법 2 · 대화 시뮬레이션</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">서로 다른 입장의 인물들이 한 테이블에 앉아 토론하는 장면을 AI가 연출합니다. 각자의 주장과 반론, 그리고 결론까지 이어지는 구조입니다. 이해관계자 갈등을 미리 예측하거나 설득 논리를 준비할 때 유용합니다.</div>
+          <div class="code-wrap">
+            <pre>아래 상황에 관련된 4명의 이해관계자를 동시에 분석하세요.
+
+각 이해관계자에 대해 :
+- 가장 원하는 것 (핵심 욕구)
+- 가장 두려워하는 것 (핵심 공포)
+- 공개적으로 말하는 것 vs 속으로 생각하는 것
+- 이 상황에서 갖는 협상력
+
+마지막에 :
+- 모두가 동의할 수 있는 최소 공통점
+- 가장 큰 갈등 지점
+- 현실적 합의 가능 경로
+
+상황 : 중소기업 수출 자동화 시스템 도입을 추진 중인 상황.
+이해관계자 : 대표 / 무역 팀장 / 팀원 2명 / IT 외주업체</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">방법 3 · 전문 분야 렌즈 분석</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">같은 문제를 전혀 다른 전문 분야의 시각으로 바라봅니다. 각 분야가 문제를 어떻게 정의하고 어떤 해결책을 제안하는지 비교하면, 예상치 못한 해결 실마리가 나타납니다.</div>
+          <div class="code-wrap">
+            <pre>아래 문제를 5가지 전문 분야의 렌즈로 동시에 분석하세요.
+각 분야가 이 문제를 어떻게 정의하고
+어떤 해결책을 제안하는지 보여 주세요.
+
+분야 : 심리학 / 경제학 / 시스템 공학 / 인류학 / 게임 디자인
+
+문제 : "무역팀이 새로운 자동화 도구 도입 후
+       3개월이 지나도 제대로 활용하지 못한다."</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">방법 4 · 시간 레이어 분석</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">과거→현재→미래를 연결된 레이어로 분석합니다. 과거의 결정이 현재에 어떻게 나타나고, 지금의 선택이 미래를 어떻게 바꾸는지를 흐름으로 보여줍니다. 구조적 문제나 장기 전략 수립에 적합합니다.</div>
+          <div class="code-wrap">
+            <pre>아래 주제를 3개의 시간 레이어에서 동시에 분석하세요.
+각 레이어가 다음 레이어에 어떤 영향을 주는지 연결해 주세요.
+
+레이어 1 — 과거 (5년 전)
+당시 사람들은 무엇을 알고, 무엇을 몰랐나?
+
+레이어 2 — 현재
+과거의 결정이 현재에 어떤 모습으로 나타나는가?
+지금 진짜 문제는 무엇인가?
+
+레이어 3 — 미래 (5년 후)
+지금의 선택이 미래에 어떤 모습으로 누적되는가?
+어떤 결정을 내려야 미래가 바뀔 수 있는가?
+
+주제 : "한국 중소기업의 무역 디지털 격차"</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-icon">💡</div>
+      <div><strong>언제 쓰면 좋은가?</strong><br>단순 정보 조회보다 의사결정, 갈등 분석, 전략 수립처럼 복잡한 상황에서 진가를 발휘합니다. 관점의 수는 3~5개가 적당하며, 너무 많으면 분석이 산만해집니다.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/t1.html');</script>
+</body>
+</html>

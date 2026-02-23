@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoT 기법 — 프롬프트 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main class="content-area">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <span>프롬프트 가이드</span><span class="sep">›</span><span class="current">CoT 기법</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="header-meta"><span class="meta-tag technique">기법</span></div>
+      <a href="../index.html" class="home-btn">홈</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-heading">CoT 기법</div>
+    <div class="page-intro">Chain of Thought(사고의 연쇄)는 AI가 결론으로 곧장 달려가지 않고, 중간 추론 단계를 하나씩 거쳐 답에 도달하게 만드는 기법입니다. 수학 문제, 법률 해석, 복잡한 비즈니스 판단처럼 논리적 추론이 중요한 상황에서 답변 정확도를 크게 높여 줍니다.</div>
+
+    <div class="section">
+      <div class="section-title">CoT가 필요한 이유</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>구분</th><th>일반 프롬프트</th><th>CoT 프롬프트</th></tr></thead>
+          <tbody>
+            <tr><td><strong>답변 방식</strong></td><td>질문 → 결론 (직행)</td><td>질문 → 단계 → 단계 → 결론</td></tr>
+            <tr><td><strong>오류 발생</strong></td><td>중간 실수가 보이지 않음</td><td>어느 단계에서 틀렸는지 확인 가능</td></tr>
+            <tr><td><strong>복잡한 문제</strong></td><td>단순화되거나 틀리기 쉬움</td><td>단계별 분해로 정확도 향상</td></tr>
+            <tr><td><strong>신뢰성</strong></td><td>결과만 보고 판단해야 함</td><td>추론 과정을 검토 가능</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">CoT 활성화 방법 3가지</div>
+      <div class="priority-list">
+        <div class="priority-row blue"><span class="priority-dot">A</span><div><span class="priority-label">마법 문장 추가</span> "단계별로 생각해 주세요" 또는 "Let's think step by step"을 프롬프트 끝에 추가하는 가장 간단한 방법입니다.</div></div>
+        <div class="priority-row yellow"><span class="priority-dot">B</span><div><span class="priority-label">단계 직접 설계</span> 거쳐야 할 단계를 내가 직접 정의합니다. AI가 내가 원하는 순서로 추론하도록 유도할 수 있습니다.</div></div>
+        <div class="priority-row red"><span class="priority-dot">C</span><div><span class="priority-label">예시로 보여주기</span> 퓨샷 방식으로 "이렇게 단계별로 생각하는 것"의 예시를 먼저 제시하고, 같은 방식으로 풀어달라고 요청합니다.</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">방법 A · 마법 문장 추가</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">가장 간단한 CoT 활성화 방법입니다. 프롬프트 끝에 한 문장만 추가하면 AI가 자동으로 단계적 추론을 시작합니다.</div>
+          <div class="code-wrap">
+            <pre">한국 기업이 미국에 수출할 때
+HS Code 8471.30에 해당하는 제품의
+관세율과 원산지 기준을 알려 주세요.
+
+단계별로 생각하면서 답해 주세요.</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">방법 B · 단계 직접 설계</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">내가 원하는 추론 경로를 미리 설계합니다. AI가 특정 순서로 문제를 분해하도록 유도해 예측 가능한 구조의 답변을 얻습니다.</div>
+          <div class="code-wrap">
+            <pre">아래 문제를 다음 순서로 단계별 추론해 주세요.
+각 단계에서 중간 결론을 명확히 보여 주세요.
+
+[단계 1] 상황 파악 — 현재 어떤 상황인가?
+[단계 2] 원인 분석 — 왜 이런 상황이 발생했는가?
+[단계 3] 선택지 도출 — 어떤 대응이 가능한가?
+[단계 4] 선택지 평가 — 각 선택의 득실은?
+[단계 5] 최종 판단 — 어떤 선택이 최선인가?
+
+문제 : "기존 바이어가 갑자기 주문을 50% 줄이겠다고 통보했다.
+       어떻게 대응해야 하는가?"</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">방법 C · 퓨샷 CoT (예시로 보여주기)</div>
+      <div class="block">
+        <div class="block-body">
+          <div class="desc-text">단계적 추론의 예시를 먼저 제시한 뒤, 같은 방식으로 새 문제를 풀어달라고 요청합니다. 특정 유형의 문제를 반복적으로 다룰 때 가장 일관된 결과를 얻을 수 있습니다.</div>
+          <div class="code-wrap">
+            <pre">[예시]
+질문 : 미국 바이어에게 FOB 조건으로 견적을 보내려 한다.
+      제품 원가 $30, 국내 운송비 $2, 수출 포장비 $1.5,
+      통관 수수료 $0.5일 때 FOB 가격은?
+
+추론 :
+- FOB 가격 = 제품 원가 + 수출항 인도까지 발생하는 모든 비용
+- 제품 원가 : $30
+- 국내 운송 : $2
+- 수출 포장 : $1.5
+- 통관 수수료 : $0.5
+- 합계 : $30 + $2 + $1.5 + $0.5 = $34
+
+결론 : FOB 가격은 $34입니다.
+
+---
+
+[새 문제]
+아래 조건에서 CIF 가격을 같은 방식으로 구해 주세요.
+제품 원가 $45, 국내 운송 $3, 수출 포장 $2,
+통관 수수료 $1, 해상 운임 $5, 해상 보험료 $1.2</pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">CoT가 특히 효과적인 상황</div>
+      <div class="checklist">
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>수치 계산이 포함된 문제 (관세, 가격 산정, 수익률)</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>법률·규정 해석처럼 논리 순서가 중요한 문제</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>여러 조건이 얽혀 있는 복잡한 의사결정</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>AI의 추론 과정을 직접 검토하고 싶을 때</span></div>
+        <div class="checklist-item"><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>같은 유형의 문제를 일관된 방식으로 반복 처리할 때</span></div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-icon">💡</div>
+      <div><strong>심사숙고 유도 기법과의 차이</strong><br>심사숙고 유도는 "더 깊이 생각하게" 하는 데 초점을 맞추고, CoT는 "어떤 순서로 생각하게" 하는 데 초점을 맞춥니다. 둘을 함께 사용하면 깊이와 순서를 모두 잡을 수 있습니다.</div>
+    </div>
+  </div>
+</main>
+<script src="../sidebar.js"></script>
+<script>renderSidebar('pages/t3.html');</script>
+</body>
+</html>

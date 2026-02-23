@@ -27,6 +27,11 @@ const ICONS = {
   flower:     `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 7.794M12 7.5a4.5 4.5 0 1 0-4.5 7.794M12 7.5V9"/><circle cx="12" cy="14" r="2.5"/><path d="M12 16.5V21"/></svg>`,
   trend:      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`,
   bridge:     `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 18V12a10 10 0 0 1 20 0v6"/><path d="M2 12h20"/><path d="M7 12v6"/><path d="M17 12v6"/><path d="M12 7v5"/></svg>`,
+  eye:        `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  zap:        `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+  link:       `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+  cpu:        `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
+  key:        `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>`,
 };
 
 // ── 네비게이션 데이터 ──────────────────────────────────────────
@@ -78,6 +83,17 @@ const NAV_DATA = [
       { page: 'pages/f5.html', label: 'RISEN',   icon: 'trend',  num: 'F5', badge: 'framework' },
       { page: 'pages/f6.html', label: 'BAB',     icon: 'bridge', num: 'F6', badge: 'framework' },
     ]
+  },
+  {
+    type: 'technique',
+    groupLabel: '기법',
+    items: [
+      { page: 'pages/t1.html', label: '다중 관점 기법',         icon: 'eye',  num: 'T1', badge: 'technique' },
+      { page: 'pages/t2.html', label: '심사숙고 유도 기법',     icon: 'brain', num: 'T2', badge: 'technique' },
+      { page: 'pages/t3.html', label: 'CoT 기법',              icon: 'link', num: 'T3', badge: 'technique' },
+      { page: 'pages/t4.html', label: 'APE 기법',              icon: 'cpu',  num: 'T4', badge: 'technique' },
+      { page: 'pages/t5.html', label: '프롬프트 작성 5가지 열쇠', icon: 'key',  num: 'T5', badge: 'technique' },
+    ]
   }
 ];
 
@@ -104,6 +120,7 @@ function renderSidebar(currentPage) {
       '<button class="filter-chip" id="chip-basic"            onclick="filterGroup(\'basic\',this)">기본</button>' +
       '<button class="filter-chip" id="chip-pattern"          onclick="filterGroup(\'pattern\',this)">패턴</button>' +
       '<button class="filter-chip" id="chip-framework"        onclick="filterGroup(\'framework\',this)">프레임</button>' +
+      '<button class="filter-chip" id="chip-technique"        onclick="filterGroup(\'technique\',this)">기법</button>' +
     '</div>';
 }
 
@@ -123,6 +140,7 @@ function buildNavHTML(currentPage, root) {
       if (item.badge === 'basic')     badgeLabel = '기본';
       else if (item.badge === 'pattern')   badgeLabel = '패턴';
       else if (item.badge === 'framework') badgeLabel = 'FW';
+      else if (item.badge === 'technique') badgeLabel = '기법';
 
       const badgeHTML = item.badge
         ? '<span class="nav-badge badge-' + item.badge + '">' + badgeLabel + '</span>'
